@@ -7,13 +7,17 @@ const Home = () => {
   const { allPosts, setAllPosts } = useContext(Context);
   const [img, setImg] = useState(null);
 
+  const {users, token} = useContext(Context);
+
+  const currentUser = users.find(usr => usr.tel === token);
+
   function handleAddPost(e) {
     e.preventDefault();
     const newPost = {
       id:Date.now(),
       body: e.target.post.value,
       image: img ? URL.createObjectURL(img) : null,
-      username: "Current User",
+      username: currentUser.name,
       likes: 0,
       comments: 0,
       reposts: 0,
