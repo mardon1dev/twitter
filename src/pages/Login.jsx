@@ -15,6 +15,12 @@ const Login = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
+    const registrationTime = new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
     if (data.tel === "997235430" && data.password === "5430") {
       toast.success("Welcome Admin Mardonbek!");
       setTimeout(() => {
@@ -25,7 +31,8 @@ const Login = () => {
                 name: "Mardonbek",
                 tel: "997235430",
                 password:"5430",
-                isAdmin: true
+                isAdmin: true,
+                registrationTime: registrationTime
             }]
         )
         setToken("997235430");

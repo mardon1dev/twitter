@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 
 const NavbarLink = ({item}) => {
   return (
-    <li className="nav-item" key={item.id}>
+    <li className="nav-item hover:bg-[#333]/10 rounded-lg" key={item.id}>
       <NavLink
-        className="text-lg font-semibold leading-6 flex items-center gap-4"
+        className="w-full text-lg font-semibold leading-6 flex items-center gap-4 p-2"
         to={item.link}
       >
-        {item.icon}
+        <span className="">{item.icon}</span>
         <span className="ml-2">{item.text}</span>
       </NavLink>
     </li>

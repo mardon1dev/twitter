@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Tweets = () => {
+const TweetPost = () => {
   return (
     <div>Tweets</div>
   )
 }
 
-export default Tweets
+export default TweetPost

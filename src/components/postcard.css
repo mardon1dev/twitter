@@ -1,0 +1,9 @@
+.post-liked:hover .post-liked-img{
+    padding: 5px;
+    background-color: rgb(252, 162, 162);
+    border-radius: 100%;
+    color: red;
+}
+.post-liked:hover{
+    color: red;
+}

@@ -70,6 +70,11 @@ export const ContextProvider = ({ children }) => {
       reposts: 2,
       tags: ["history", "american", "crime"],
       reactions: 2,
+      isLiked: false,
+      isReposted: false,
+      isCommented: false,
+      isBookmarked: false,
+      imageUrl: "https://picsum.photos/id/1/300/300"
     },
     {
       id: 2,
@@ -83,6 +88,11 @@ export const ContextProvider = ({ children }) => {
       reposts: 1,
       tags: ["french", "fiction", "english"],
       reactions: 2,
+      isLiked: false,
+      isReposted: false,
+      isCommented: false,
+      isBookmarked: false,
+      imageUrl: "https://picsum.photos/id/1/300/300"
     },
     {
       id: 3,
@@ -96,98 +106,12 @@ export const ContextProvider = ({ children }) => {
       reposts: 3,
       tags: ["magical", "history", "french"],
       reactions: 5,
-    },
-    {
-      id: 4,
-      title: "The paper was blank.",
-      body: "The paper was blank. There was absolutely nothing on it, not even a watermark...",
-      userId: 1,
-      username: "writer_gal",
-      likes: 5,
-      views: 100,
-      comments: 2,
-      reposts: 0,
-      tags: ["fiction", "magical", "english"],
-      reactions: 1,
-    },
-    {
-      id: 5,
-      title: "They rushed out the door.",
-      body: "They rushed out the door. Their parents yelled at them to stop and come back...",
-      userId: 6,
-      username: "adventure_time",
-      likes: 20,
-      views: 250,
-      comments: 6,
-      reposts: 4,
-      tags: ["fiction", "english", "classic"],
-      reactions: 2,
-    },
-    {
-      id: 6,
-      title: "Standing out in a crowd",
-      body: "Standing out in a crowd is not something one should aspire to do...",
-      userId: 29,
-      username: "unique_perspective",
-      likes: 8,
-      views: 80,
-      comments: 1,
-      reposts: 1,
-      tags: ["fiction", "classic", "literature"],
-      reactions: 0,
-    },
-    {
-      id: 7,
-      title: "She wanted rainbow hair",
-      body: "She wanted rainbow hair. She had wanted it for so long that it seemed as if it would be...",
-      userId: 19,
-      username: "colorful_world",
-      likes: 12,
-      views: 120,
-      comments: 3,
-      reposts: 2,
-      tags: ["literature", "english", "american"],
-      reactions: 1,
-    },
-    {
-      id: 8,
-      title: "The book is in front of the table",
-      body: "The book is in front of the table. He was curious about why it was there...",
-      userId: 4,
-      username: "curious_reader",
-      likes: 17,
-      views: 220,
-      comments: 7,
-      reposts: 3,
-      tags: ["magical", "crime", "history"],
-      reactions: 3,
-    },
-    {
-      id: 9,
-      title: "A mysterious lady in white",
-      body: "She was a mysterious lady in white. There was something about her that everyone...",
-      userId: 23,
-      username: "mystery_scribe",
-      likes: 14,
-      views: 180,
-      comments: 4,
-      reposts: 0,
-      tags: ["american", "classic", "magical"],
-      reactions: 1,
-    },
-    {
-      id: 10,
-      title: "He looked at the stars",
-      body: "He looked at the stars. They were so bright and beautiful...",
-      userId: 33,
-      username: "star_gazer",
-      likes: 30,
-      views: 500,
-      comments: 12,
-      reposts: 5,
-      tags: ["history", "literature", "american"],
-      reactions: 4,
-    },
+      isLiked: false,
+      isReposted: false,
+      isCommented: false,
+      isBookmarked: false,
+      imageUrl: "https://picsum.photos/id/1/300/300"
+    }
   ];
 
   const [users, setUsers] = useState(
@@ -219,6 +143,10 @@ export const ContextProvider = ({ children }) => {
     );
   };
 
+  // Umumiy modal uchun
+  const [openModal, setOpenModal] = useState(false);
+  const [openModalEdit, setOpenModalEdit] = useState(false);
+
   return (
     <Context.Provider
       value={{
@@ -237,7 +165,11 @@ export const ContextProvider = ({ children }) => {
         navlinks,
         allPosts,
         setAllPosts,
-        updatePost
+        updatePost,
+        openModal,
+        setOpenModal,
+        openModalEdit,
+        setOpenModalEdit,
       }}
     >
       {children}

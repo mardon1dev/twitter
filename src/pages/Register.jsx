@@ -35,11 +35,19 @@ const Register = () => {
         return;
     }
 
+    const registrationTime = new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
     const newUser = {
       name: data.name,
       tel: data.tel,
       password: data.password,
-      isAdmin: false
+      isAdmin: false,
+      registrationTime: registrationTime
+
     };
     setUsers([...users, newUser]);
     toast.success(`Account created successfully! Welcome, ${data.name}.`);

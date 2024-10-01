@@ -8,7 +8,7 @@ import Notifications from "./Notifications";
 import Profile from "./Profile";
 import Login from "./Login";
 import Register from "./Register";
-import Tweets from "./Tweets";
+import TweetPost from "./TweetPost";
 export {
     Bookmarks,
     Explore,
@@ -20,5 +20,5 @@ export {
     Profile,
     Login,
     Register,
-    Tweets
+    TweetPost
 }
