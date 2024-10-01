@@ -33,7 +33,7 @@ const Navbar = () => {
       likes: 0,
       comments: 0,
       reposts: 0,
-      imageUrl: Avatar,
+      imageUrl: currentUser?.imageUrl ?? Avatar,
     };
     setAllPosts([newPost, ...allPosts]);
     e.target.reset();
